@@ -47,7 +47,7 @@ class App extends React.Component {
             <AnimatedRoute
               exact path='/trips' component={Trips}
               atEnter={{ offset: -200 }}
-              atLeave={{ offset: 0 }}
+              atLeave={{ offset: -200 }}
               atActive={{ offset: 0 }}
               mapStyles={(styles) => ({
                 transform: `translateY(${styles.offset}px)`,
