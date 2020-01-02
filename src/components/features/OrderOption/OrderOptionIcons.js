@@ -23,7 +23,6 @@ const OrderOptionIcons = ({ values, setOptionValue, currentValue, required }) =>
       >
         <Icon name={value.icon}></Icon>
         {value.name} ({formatPrice(value.price)})
-
       </div>
     ))}
   </div>

@@ -50,6 +50,7 @@ const Trip = ({ error, name, image, cost, days, description, country, intro }) =
           </Col>
         </Row>
       </Grid>
+
       <Grid>
         <PageTitle text={`About ${country.name}`} />
       </Grid>
