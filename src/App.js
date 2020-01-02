@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { AnimatedRoute } from 'react-router-transition';
-//import styles from './styles/global.scss';
+import { AnimatedSwitch } from 'react-router-transition';
+import styles from '../src/styles/global.scss';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
 
@@ -42,24 +42,21 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <MainLayout>
-          <Switch>
+          <AnimatedSwitch
+            atEnter={{ opacity: 0 }}
+            atLeave={{ opacity: 0 }}
+            atActive={{ opacity: 1 }}
+            className={styles.switchWrapper}
+          >
             <Route exact path='/' component={Home} />
-            <AnimatedRoute
-              exact path='/trips' component={Trips}
-              atEnter={{ offset: -200 }}
-              atLeave={{ offset: -200 }}
-              atActive={{ offset: 0 }}
-              mapStyles={(styles) => ({
-                transform: `translateY(${styles.offset}px)`,
-              })}
-            />
+            <Route exact path='/trips' component={Trips} />
             <Route exact path='/trip/:id' component={Trip} />
             <Route exact path='/countries' component={Countries} />
             <Route exact path='/country/:id' component={Country} />
             <Route exact path='/regions' component={Regions} />
             <Route exact path='/info' component={Info} />
             <Route path='*' component={NotFound} />
-          </Switch>
+          </AnimatedSwitch>
         </MainLayout>
       </BrowserRouter >
     );
