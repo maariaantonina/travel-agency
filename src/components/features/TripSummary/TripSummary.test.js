@@ -60,8 +60,7 @@ describe('Component TripSummary', () => {
 
   it('does not render tags if there is no tag', () => {
     const component = shallow(<TripSummary id={'id'} image={'image.jpg'} name={'name'} cost={'cost'} days={5} />);
-
+    expect(component.find('.tags')).toEqual({});
     console.log(component.debug());
-    expect(component).toEqual({});
   });
 });
