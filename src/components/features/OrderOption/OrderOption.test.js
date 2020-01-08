@@ -167,6 +167,21 @@ for (let type in optionTypes) {
 
         break;
       }
+
+      case 'text': {
+        /* test for texts */
+        it('contains input type=text', () => {
+          const inputText = renderedSubcomponent.find('input[type="text"]');
+
+          expect(inputText.length).toBe(1);
+        });
+
+        it('should run SetOrderOption function on change', () => {
+          renderedSubcomponent.find('input[type="text"]').simulate('change', { currentTarget: { value: testValue } });
+          expect(mockSetOrderOption).toBeCalledTimes(1);
+          expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
+        });
+      }
     }
   });
 }
