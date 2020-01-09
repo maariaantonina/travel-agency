@@ -23,7 +23,7 @@ const sendOrder = (trip, options, tripCost) => {
     totalCost,
   };
 
-  const url = settings.db.url + '/' + settings.db.endpoint.orders;
+  const url = `${settings.db.url}/${settings.db.endpoint.orders}`;
 
   const fetchOptions = {
     cache: 'no-cache',
@@ -39,18 +39,17 @@ const sendOrder = (trip, options, tripCost) => {
       return response.json();
     }).then(function (parsedResponse) {
       console.log('parsedResponse', parsedResponse);
-    });
+    }).catch(error => console.log('Błąd: ', error));
 };
 
 const isValid = (trip, options, tripCost) => {
   const { name, contact } = options;
-  if (name != '' && contact != '') {
+  if (name !== '' && contact !== '') {
     sendOrder(trip, options, tripCost);
-  } else { window.alert('Fill in name and contact fields'); }
+  } else { window.alert('Fill name and contact fields in'); }
 };
 
 const OrderForm = ({ trip, tripCost, options, setOrderOption }) => {
-  console.log(options);
   return (
     <Row>
       {pricing.map(option => (
