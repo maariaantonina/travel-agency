@@ -181,6 +181,15 @@ for (let type in optionTypes) {
           expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
         });
+        break;
+      }
+
+      case 'date': {
+        /*test for date picker */
+        it('contains Datepicker', () => {
+          expect(renderedSubcomponent.contains('Datepicker'));
+        });
+        break;
       }
     }
   });
