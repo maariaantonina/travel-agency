@@ -1,1 +1,1 @@
-React js and redux app for travel agency.
+React js app for travel agency. React, ReactRouter, Redux, Jest, Enzyme, API.
