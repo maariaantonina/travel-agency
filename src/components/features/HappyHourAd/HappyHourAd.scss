@@ -1,0 +1,18 @@
+.component {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.title, .countdown {
+  position: absolute;
+  width: 100%;
+}
+
+.title {
+  bottom: 40px;
+}
+
+.countdown {
+  bottom: 10px;
+}
