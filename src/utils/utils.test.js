@@ -44,7 +44,7 @@ describe('utils', () => {
     });
 
     it('should calculate discounted price', () => {
-      expect(promoPrice(1000, 20)).toBe(800);
+      expect(promoPrice(1000, 20)).toBe('800.00');
     });
   });
 });

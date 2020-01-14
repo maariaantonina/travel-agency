@@ -42,7 +42,7 @@ describe('Component TripSummary', () => {
     const component = shallow(<TripSummary id={'id'} image={'image.jpg'} name={expectedName} cost={expectedCost} days={expectedDays} tags={tagVariants} />);
 
     const targetCost = '123 days';
-    const targetDays = 'from 123';
+    const targetDays = 'Standard price from: 123';
     expect(component.find('.title').text()).toEqual(expectedName);
     expect(component.find('.details').children().first().text()).toEqual(targetCost);
     expect(component.find('.details').children().last().text()).toEqual(targetDays);
