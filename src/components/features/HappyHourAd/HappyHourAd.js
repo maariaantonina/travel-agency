@@ -19,7 +19,11 @@ class HappyHourAd extends React.Component {
 
   constructor() {
     super();
-    setInterval(() => this.forceUpdate(), 1000);
+    if (!this.isCancelled) { setInterval(() => this.forceUpdate(), 1000); }
+  }
+
+  componentWillUnmount() {
+    this.isCancelled = true;
   }
 
   getCountdownTime() {

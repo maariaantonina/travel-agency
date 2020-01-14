@@ -7,7 +7,6 @@ export const formatTime = seconds => {
     hour = hour.padStart(2, '0');
 
     min = Math.floor((seconds / 60) % 60) + '';
-    //min >= 60 ? min = (min - 60) + '' : min = min + '';
     min = min.padStart(2, '0');
 
     sec = (seconds % 60) + '';
