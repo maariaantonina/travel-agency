@@ -7,5 +7,5 @@ export const promoPrice = (price, discount) => {
     discount < 0) {
     return null;
   }
-  return price * (100 - discount) / 100;
+  return (price * (100 - discount) / 100).toFixed(2);
 };

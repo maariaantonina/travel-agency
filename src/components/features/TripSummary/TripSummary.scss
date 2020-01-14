@@ -45,6 +45,11 @@
   }
 }
 
+.standard {
+  color: #000;
+  font-size: $base-size*1;
+}
+
 .tags {
   width: 80%;
   margin: ($base-size * 2) auto 0 auto;
